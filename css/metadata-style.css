@@ -1,4 +1,4 @@
-/* 응용 프로파일 요소 세분화 - 커스텀 스타일 */
+/* 응용 프로파일 요소 세분화 - 커스텀 스타일 (수정본) */
 
 /* 기본 리셋 */
 * {
@@ -6,6 +6,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* 스무스 스크롤 */
+html { scroll-behavior: smooth; }
 
 /* Body 스타일 */
 body {
@@ -22,45 +25,111 @@ body {
     margin: 0 auto;
     background: white;
     padding: 40px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
 }
 
 /* 메인 제목 */
 h1 {
     font-size: 28px;
     color: #2c3e50;
-    margin-bottom: 30px;
-    font-weight: 600;
+    margin-bottom: 12px;
+    font-weight: 700;
     border-bottom: 2px solid #e9ecef;
-    padding-bottom: 15px;
+    padding-bottom: 12px;
 }
 
-/* 섹션 제목 */
-h3 {
-    font-size: 20px;
-    color: #2c3e50;
-    margin-top: 40px;
-    margin-bottom: 20px;
+/* ----------------------------
+   Top navigation (가로, 반투명)
+   ---------------------------- */
+.top-nav {
+    position: sticky;
+    top: 18px; /* 컨테이너 상단에서의 여백 조정 */
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    margin: 16px 0 24px 0;
+    background-color: rgba(255,255,255,0.55); /* 반투명 백그라운드 */
+    backdrop-filter: blur(6px); /* 모던 브라우저에서 배경 블러 효과 */
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 999px; /* pill 형태 */
+    box-shadow: 0 4px 18px rgba(15,23,42,0.06);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* 네비 목록 */
+.top-nav ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding-left: 6px;
+    padding-right: 6px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+/* 개별 링크 */
+.top-nav a {
+    display: inline-block;
+    padding: 8px 14px;
+    color: #1f2937;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.12s ease, color 0.12s ease, transform 0.12s ease;
+    white-space: nowrap;
+}
+
+.top-nav a:hover,
+.top-nav a:focus {
+    background-color: rgba(11, 74, 138, 0.08);
+    color: #0b4a8a;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+/* 모바일에서 가로 스크롤이 자연스럽게 보이도록 패딩/마진 조정 */
+@media (max-width: 480px) {
+    .top-nav {
+        margin: 12px 0;
+        padding: 6px 8px;
+        border-radius: 10px;
+    }
+    .top-nav a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}
+
+/* 섹션 내부의 작은 네비(Title / Brand 같은 링크) */
+.section-nav {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    margin: 8px 0 18px 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+.section-nav a {
+    color: #0366d6;
+    text-decoration: none;
     font-weight: 600;
 }
-
-h3:first-of-type {
-    margin-top: 0;
+.section-nav .dot {
+    color: #cbd5e1;
 }
 
-h3 sub {
-    font-size: 14px;
-    color: #7f8c8d;
-    margin-left: 8px;
-    font-weight: normal;
-}
+/* 제목(스크롤 오프셋 조정) */
+h2, h3 { scroll-margin-top: 96px; } /* 네비 높이에 따라 조정 */
 
-/* 메타데이터 테이블 */
+/* 메타데이터 테이블 (기존 스타일 유지 + 소폭 조정) */
 .metadata-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
     border: 1px solid #dee2e6;
     background-color: white;
 }
@@ -106,54 +175,11 @@ h3 sub {
     color: #0052a3;
 }
 
-/* 리스트 스타일 */
-.metadata-table ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.metadata-table ul li {
-    padding: 4px 0;
-}
-
-.metadata-table ul li:first-child {
-    padding-top: 0;
-}
-
-.metadata-table ul li:last-child {
-    padding-bottom: 0;
-}
-
 /* 코드/URI 스타일 */
 .metadata-table code,
 .metadata-table td:not(.field-name) {
     font-family: 'Courier New', Courier, monospace;
 }
-
-/* navigation */
-html { scroll-behavior: smooth; }
-
-/* 심플 sticky 네비 예시(원하면 position: static으로 변경) */
-.top-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background-color: rgba(255,255,255,0.60);
-  padding: 6px 0;
-  border-bottom: 1px solid #ececec;
-}
-.table-nav {
-  position: static;
-  top: 0;
-  z-index: 10;
-  background-color: rgba(255,255,255,0.95);
-  padding: 6px 0;
-  border-bottom: 1px solid #ececec;
-}
-
-/* sticky 네비 때문에 섹션이 가려지는 것을 방지 */
-h2 { scroll-margin-top: 50px; } /* 네비 높이에 따라 조정 */
 
 /* 모바일 반응형 (iPad 및 모바일) */
 @media (max-width: 768px) {
@@ -176,58 +202,14 @@ h2 { scroll-margin-top: 50px; } /* 네비 높이에 따라 조정 */
     }
 
     h1 {
-        font-size: 24px;
-        padding-bottom: 10px;
-    }
-
-    h3 {
-        font-size: 18px;
-        margin-top: 30px;
-    }
-}
-
-/* 아주 작은 화면 (작은 모바일) */
-@media (max-width: 480px) {
-    .metadata-table {
-        font-size: 12px;
-    }
-
-    .metadata-table td {
-        display: block;
-        width: 100%;
-        border-right: none !important;
-    }
-
-    .field-name {
-        width: 100%;
-        border-bottom: 1px solid #dee2e6;
-        padding-bottom: 5px;
-        margin-bottom: 5px;
-    }
-
-    .metadata-table tr td:first-child {
-        border-right: none;
+        font-size: 22px;
     }
 }
 
 /* 프린트 스타일 */
 @media print {
-    body {
-        background-color: white;
-        padding: 0;
-    }
-
-    .container {
-        box-shadow: none;
-        padding: 20px;
-    }
-
-    .metadata-table tr:hover {
-        background-color: transparent;
-    }
-
-    a {
-        color: #000;
-        text-decoration: underline;
-    }
+    .top-nav { display: none; }
+    body { background-color: white; padding: 0; }
+    .container { box-shadow: none; padding: 20px; }
+    a { color: #000; text-decoration: underline; }
 }
