@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.datatables.net/v/dt/dt-2.3.5/cr-2.1.2/fc-5.0.5/fh-4.0.5/r-3.0.7/datatables.min.css" rel="stylesheet" integrity="sha384-xPvlD5N2CJeXVy+KDtmM1WMXt3mrlIWcGhgrLjIf4iysAOmIMhMYM17dkrIPuEnM" crossorigin="anonymous">
+    <script src="https://cdn.datatables.net/v/dt/dt-2.3.5/cr-2.1.2/fc-5.0.5/fh-4.0.5/r-3.0.7/datatables.min.js" integrity="sha384-1OnKUyA0adjKAtxnfuVLwkEAN34t4Rie6G8dqxP9jCBvwcSn5Tq1wmW0pzKaXsjo" crossorigin="anonymous"></script>    <title>응용 프로파일 요소 세분화</title>
+</head>
+<body>
+   <h1>응용 프로파일 요소 세분화</h1>
+      <h3>Title<sub>상품명</sub></h3>
+      <table>
+         <tbody><tr>
+            <td class="field-name">Vocabulary:</td>
+            <td>
+            <a href="/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a>
+            </td>
+         </tr>
+         <tr>
+            <td class="field-name">URI</td>
+            <td>http://purl.org/dc/terms/title</td>
+         </tr>
+         <tr>
+            <td class="field-name">Label</td>
+            <td>Title</td>
+         </tr>
+</body>
+</html>
