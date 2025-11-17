@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- GitHub Repository에서 커스텀 CSS 불러오기 -->
+    <link href="./css/metadata-style.css" rel="stylesheet">
+    
+    <title>응용 프로파일 요소 세분화</title>
+</head>
+<body>
+    <div class="container">
+        <h1>응용 프로파일 요소 세분화</h1>
+        
+        <!-- 메타데이터 요소 1: Title -->
+        <h3>Title<sub>상품명</sub></h3>
+        <table class="metadata-table">
+            <tbody>
+                <tr>
+                    <td class="field-name">Vocabulary:</td>
+                    <td>
+                        <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="field-name">URI:</td>
+                    <td>http://purl.org/dc/terms/title</td>
+                </tr>
+                <tr>
+                    <td class="field-name">Label:</td>
+                    <td>Title</td>
+                </tr>
+                <tr>
+                    <td class="field-name">Definition:</td>
+                    <td>A name given to the resource.</td>
+                </tr>
+                <tr>
+                    <td class="field-name">Type of Term:</td>
+                    <td>Property</td>
+                </tr>
+                <tr>
+                    <td class="field-name">Has Range:</td>
+                    <td>http://www.w3.org/2000/01/rdf-schema#Literal</td>
+                </tr>
+                <tr>
+                    <td class="field-name">Subproperty of:</td>
+                    <td>
+                        <ul>
+                            <li><a href="http://purl.org/dc/elements/1.1/title">dc:title</a> (http://purl.org/dc/elements/1.1/title)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 추가 메타데이터 요소를 여기에 추가하세요 -->
+        <!--
+        <h3>Creator<sub>생성자</sub></h3>
+        <table class="metadata-table">
+            <tbody>
+                <tr>
+                    <td class="field-name">Vocabulary:</td>
+                    <td><a href="링크">내용</a></td>
+                </tr>
+                <tr>
+                    <td class="field-name">URI:</td>
+                    <td>http://purl.org/dc/terms/creator</td>
+                </tr>
+            </tbody>
+        </table>
+        -->
+        
+    </div>
+</body>
+</html>
